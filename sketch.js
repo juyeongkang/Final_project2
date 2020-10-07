@@ -77,21 +77,47 @@ function setup()
   {
     face[i] = loadImage(`assets/face_${i}.PNG`)
   }
-  textFont('Georgia');
+  textFont('VT323');
   textStyle(BOLD);
-  createCanvas(400, 400);
-  background(255);
-  textSize(18);
+  createCanvas(700, 700);
+  background(0, 0, 0);
+  textSize(21);
+  fill(33, 247, 5);
   imageMode(CENTER);
-  frameRate(9);
+  frameRate(12);
 
-  text("Find your Korean name!", 60, 150);
+  text("Kðrêå hå§ å lðñg hï§†ðr¥ å§ å ñå†ïðñ åñÐ ï† ", 60, 100);
+  text("hå§ ÐêvêlðþêÐ å µñïqµê ñå†ïðñål ïÐêñ†ï†¥ µñÐêr ", 60, 70);
+  text("†hê Çðñ£µ¢ïµ§ †råÐï†ïðñ §êêïñg †hê ñå†ïðñ å§ ", 60, 40);
+  text("åñ êx†êñÐêÐ £ðrm ð£ £åmïl¥. Hðwêvêr,§µ¢h å ¢ðñ¢êþ†ïðñ ð£ ñå†ïðñål ïÐêñ†ï†¥ hå§ ßêêñ  ", 60, 210);
+  text("§µ¢h å ¢ðñ¢êþ†ïðñ ð£ ñå†ïðñål ïÐêñ†ï†¥ hå§ ßêêñ", 60, 130);
+  text("k໐rēค hคŞ ค l໐ຖງ hiŞt໐rฯ คŞ ค ຖคti໐ຖ คຖ໓ it hคŞ ໓ēงēl໐pē໓ ค นຖi๑นē.", 60, 180);
+  text("ຖคti໐ຖคl i໓ēຖtitฯ นຖ໓ēr thē ¢໐ຖfน¢iนŞ trค໓iti໐ຖ Şēēiຖງ thē.", 60, 240);
+  text("ຖคti໐ຖ คŞ คຖ ēxtēຖ໓ē໓ f໐r๓ ໐f fค๓ilฯ h໐ຟēงēr, Şน¢h ค ¢໐ຖ¢ēpti໐ຖ ໐f ຖคti໐ຖคl.", 60, 270);
+  text("i໓ēຖtitฯ hคŞ ๖ēēຖ ¢hคຖງiຖງ นຖ໓ēr rคpi໓lฯ ¢hคຖງiຖງ ¢ir¢น๓Ştคຖ¢ēŞ Şน¢h คŞ ງl໐๖คliຊคti໐ຖ.", 60, 300);
+  text("ᏦᎧᏒᏋᏗ ᏂᏗᏕ Ꮧ ᏝᎧᏁᎶ ᏂᎥᏕᏖᎧᏒᎩ ᏗᏕ Ꮧ ᏁᏗᏖᎥᎧᏁ ᏗᏁᎴ ᎥᏖ ᏂᏗᏕ ᎴᏋᏉᏋᏝᎧᎮᏋᎴ Ꮧ .", 60, 330);
+  text("ᏬᏁᎥᎤᏬᏋ ᏁᏗᏖᎥᎧᏁᏗᏝ ᎥᎴᏋᏁᏖᎥᏖᎩ ᏬᏁᎴᏋᏒ ᏖᏂᏋ ፈᎧᏁᎦᏬፈᎥᏬᏕ ᏖᏒᏗ.", 60, 360);
+  text("¢håñgïñg µñÐêr råþïÐl¥ ¢håñgïñg ¢ïr¢µm§†åñ¢ê§ §µ¢h å§ glðßålïzå†ïðñ.", 60, 390);
+  text("What is my Korean identity?", 270, 460);
+  text("What is my Korean identity?", 250, 490);
+  text("What is my Korean identity?", 230, 520);
+  text("What is my Korean identity?", 210, 550);
+  text("What is my Korean identity?", 190, 580);
+  text("What is my Korean identity?", 170, 610);
+  text("What is my Korean identity?", 150, 640);
+  text("What is my Korean identity?", 130, 670);
 
 
-  button = createButton("Click to get My Name");
+
+
+
+
+
+
+  button = createButton("Get My Identity");
   button.mousePressed(buttonPressed);
-  button.style("padding","15px");
-  button.style("background-color", "#cdcce3");
+  button.style("padding","50px,40px");
+  button.style("background-color", "#35f50a");
 
 }
 
@@ -119,16 +145,16 @@ function randomizer()
 
   if (first[0])
   {
-  //  background(random(200, 255));
+  //background(random(200, 255));
   clear();
     randomIndex = int(random(first.length));
-    text(`Your Korean name is ${first[randomIndex].first} ${first[randomIndex].middle} ${first[randomIndex].last}`, 19, 350);
-    text(`Meaning is ${first[randomIndex].meaning}`, 19, 380);
+    text(`Hi, ${first[randomIndex].first} ${first[randomIndex].middle} ${first[randomIndex].last}`, 100, 200);
+    text(`your Korean name means ${first[randomIndex].meaning}`, 100, 230);
     image(random(face), width / 2, height / 2);
     first.splice(randomIndex, 1);
   } else
   {
-      background(255);
+      background(0, 0, 0);
       text("Explore again!", 120, 120);
   }
 }
