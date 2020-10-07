@@ -1,48 +1,81 @@
-// The things what i love
+
 let randomIndex;
 let button;
 let animating = false;
-let puppy = [];
+let face = [];
 let imageCounter = 1;
-let things =
+let first =
+
 
 [
   {
-  who: "Father",
-  color: "Orange"
+  first: "Ju",
+  middle: "-Yeong",
+  last: "Kang",
+  meaning: "The glory of the Lord."
   },
   {
-  who: "Mother ",
-  color: "chartrese"
+  first: "Ji ",
+  middle: "-Hye",
+  last: "Choi",
+  meaning:"Grace."
   },
   {
-  who: "Brother",
-  color: "poop"
+  first: "Jae",
+  middle: "-Min",
+  last:  "Lee",
+  meaning:"Brilliant and bright person."
   },
   {
-  who: "Girlfriend",
-  color: "blue"
+  first: "Hyeon",
+  middle: "-Seo",
+  last: "Kim",
+  meaning:"Noble person."
   },
   {
-  who: "Bestfriends",
-  color: "black"
+  first: "Yeon",
+  middle: "-Jae",
+  last: "Park",
+  meaning:"Shining gem stone."
   },
   {
-  who: "Games",
-  color: "red"
+  first: "Hyo",
+  middle: "-Jin",
+  last:"Jo",
+  meaning:"Sincere virtue."
   },
   {
-  who: "Art",
-  color: "white"
+  first: "Do",
+  middle: "-Bin",
+  last:"Yun",
+  meaning:"benefit from one's ancestors."
+  },
+  {
+  first: "Soo",
+  middle: "-Jong",
+  last:"Han",
+  meaning:"Talented in many things."
+  },
+  {
+  first: "Jong",
+  middle: "-Rim",
+  last:"Jung",
+  meaning:"enjoying the world."
+  },
+  {
+  first: "Dong",
+  middle: "-Won",
+  last:"Seo",
+  meaning:"Rising sun from the east."
   }
 ];
 
 function setup()
 {
 
-  for (let i = 1; i <= 7; i++)
+  for (let i = 1; i <= 10; i++)
   {
-    puppy[i] = loadImage(`assets/puppy_${i}.PNG`)
+    face[i] = loadImage(`assets/face_${i}.PNG`)
   }
   textFont('Georgia');
   textStyle(BOLD);
@@ -50,12 +83,12 @@ function setup()
   background(255);
   textSize(18);
   imageMode(CENTER);
-  frameRate(8);
+  frameRate(9);
 
-  text("Click to Randomize.", 60, 150);
+  text("Find your Korean name!", 60, 150);
 
 
-  button = createButton("click to randomize");
+  button = createButton("Click to get My Name");
   button.mousePressed(buttonPressed);
   button.style("padding","15px");
   button.style("background-color", "#cdcce3");
@@ -67,9 +100,9 @@ function draw()
   if (animating == true)
   {
     clear();
-    image(puppy[imageCounter], width / 2, height / 2);
+    image(face[imageCounter], width / 2, height / 2);
 
-    if (imageCounter < puppy.length - 1)
+    if (imageCounter < face.length - 1)
     {
       imageCounter++;
       console.log(imageCounter);
@@ -84,18 +117,19 @@ function randomizer()
 {
   animating = false;
 
-  if (things[0])
+  if (first[0])
   {
   //  background(random(200, 255));
   clear();
-    randomIndex = int(random(things.length));
-    text(`${things[randomIndex].who}'s favorite color is ${things[randomIndex].color}`, 19, 400);
-    image(random(puppy), width / 2, height / 2);
-    things.splice(randomIndex, 1);
+    randomIndex = int(random(first.length));
+    text(`Your Korean name is ${first[randomIndex].first} ${first[randomIndex].middle} ${first[randomIndex].last}`, 19, 350);
+    text(`Meaning is ${first[randomIndex].meaning}`, 19, 380);
+    image(random(face), width / 2, height / 2);
+    first.splice(randomIndex, 1);
   } else
   {
-      background(random(200, 255));
-      text("Nothing left!", 120, 120);
+      background(255);
+      text("Explore again!", 120, 120);
   }
 }
 
