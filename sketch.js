@@ -48,7 +48,7 @@ let first =
   first: "Do",
   middle: "-Bin",
   last:"Yun",
-  meaning:"benefit from one's ancestors."
+  meaning:"bless from ancestors."
   },
   {
   first: "Soo",
@@ -75,7 +75,7 @@ function setup()
 
   for (let i = 1; i <= 10; i++)
   {
-    face[i] = loadImage(`assets/face_${i}.PNG`)
+    face[i] = loadImage(`assets/face_${i}.png`)
   }
   textFont('VT323');
   textStyle(BOLD);
